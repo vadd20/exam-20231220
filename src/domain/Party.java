@@ -1,5 +1,7 @@
 package domain;
 
+import enums.ActionLevel;
+
 /**
  * Модель политической партии.
  *
@@ -11,11 +13,11 @@ public class Party {
     private final String uuid;
     private final String externalId;
     private final String name;
-    private final String actionLevel;
+    private final ActionLevel actionLevel;
     private String parentId;
     private String partyCode;
 
-    public Party(String uuid, String externalId, String name, String actionLevel, String parentId,
+    public Party(String uuid, String externalId, String name, ActionLevel actionLevel, String parentId,
                  String partyCode) {
         this.uuid = uuid;
         this.externalId = externalId;
@@ -37,7 +39,7 @@ public class Party {
         return name;
     }
 
-    public String getActionLevel() {
+    public ActionLevel getActionLevel() {
         return actionLevel;
     }
 

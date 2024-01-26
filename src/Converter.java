@@ -23,7 +23,7 @@ public class Converter {
                 UUID.randomUUID().toString(),
                 partyFromFile.getId(),
                 partyFromFile.getName(),
-                ActionLevel.getDescriptionByCode(partyFromFile.getLevel()),
+                ActionLevel.getValueByCode(partyFromFile.getLevel()),
                 partyFromFile.getParent(),
                 partyFromFile.getParent() == null ? partyFromFile.getCode() + "00" : partyFromFile.getCode()
             )).collect(Collectors.toMap(Party::getExternalId, Function.identity()));

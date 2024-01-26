@@ -19,10 +19,14 @@ public enum ActionLevel {
         this.description = description;
     }
 
-    public static String getDescriptionByCode(String code) {
+    public String getDescription() {
+        return this.description;
+    }
+
+    public static ActionLevel getValueByCode(String code) {
         for (ActionLevel value : values()) {
             if (code.equals(value.code)) {
-                return value.description;
+                return value;
             }
         }
         return null;

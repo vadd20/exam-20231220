@@ -1,6 +1,9 @@
 import java.io.IOException;
 import java.util.List;
 import domain.Party;
+import io.FilePartyReader;
+import io.PartiesInformationWriter;
+import io.SqlQueryWriter;
 
 /**
  * Сервис обработки данных партий.
@@ -16,8 +19,11 @@ public class PartyDataProcessingService {
             return;
         }
         List<Party> parties = Converter.convertPartyFromFileListToPartyList(FilePartyReader.getProcessedLines());
+
         String stringQuery = SqlQueryCreator.createSqlQuery(parties);
-        SqlQueryCreator.createSqlFile(stringQuery);
+        SqlQueryWriter.createSqlFile(stringQuery);
+
+        PartiesInformationWriter.writeInformationToConsole(parties);
     }
 
 
