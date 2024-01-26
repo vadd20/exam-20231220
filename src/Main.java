@@ -1,4 +1,10 @@
 import java.io.IOException;
+import java.util.List;
+import entity.Party;
+import io.DataLoader;
+import io.PartiesInformationWriter;
+import io.SqlQueryWriter;
+import validation.FileIsCorrectValidator;
 
 /**
  * Основной класс.
@@ -8,6 +14,15 @@ import java.io.IOException;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        PartyDataProcessingService.process();
+
+        if (FileIsCorrectValidator.validate(DataLoader.getProcessedLines())) {
+            return;
+        }
+        List<Party> parties = Converter.convertPartyFromFileListToPartyList(DataLoader.getProcessedLines());
+
+        String stringQuery = SqlQueryCreator.createSqlQuery(parties);
+        SqlQueryWriter.createSqlFile(stringQuery);
+
+        PartiesInformationWriter.writeInformationToConsole(parties);
     }
 }

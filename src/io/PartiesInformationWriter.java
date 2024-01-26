@@ -1,11 +1,11 @@
 package io;
 
 import java.util.List;
-import domain.Party;
+import entity.Party;
 import enums.ActionLevel;
 
 /**
- * todo vpodogov
+ * Запись информации о количестве партий в консоль.
  *
  * @author Vadim Podogov
  * @since 2024.01.26
@@ -22,9 +22,9 @@ public class PartiesInformationWriter {
                 regPartiesCounter++;
             }
         }
-        var sb = new StringBuilder();
-        sb.append("Обработано ").append(fedPartiesCounter).append(" партий федерального уровня и ")
-            .append(regPartiesCounter).append(" партий регионального уровня");
-        System.out.println(sb);
+
+        System.out.println(new StringBuilder().append("Обработано ")
+                .append(fedPartiesCounter).append(" партий федерального уровня и ")
+                .append(regPartiesCounter).append(" партий регионального уровня"));
     }
 }

@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 
 /**
- * Создать и запись данный в SQL-файл.
+ * Запись результата в SQL-файл.
  *
  * @author Vadim Podogov
  * @since 2024.01.26

@@ -1,5 +1,5 @@
 import java.util.List;
-import domain.Party;
+import entity.Party;
 
 /**
  * Класс для создания SQL запроса и файла.

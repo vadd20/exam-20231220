@@ -4,27 +4,21 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
-import domain.PartyFromFile;
+import entity.PartyFromFile;
 
 /**
- * Класс для прочтения файла.
+ * Класс для чтения файла и загрузки данных.
  *
  * @author Vadim Podogov
  * @since 2024.01.18
  */
-public class FilePartyReader {
+public class DataLoader {
 
-    public static String FILE_PATH = "src\\party_example.csv";
+    public static String FILE_PATH = "src\\data\\party_example.csv";
 
     public static List<PartyFromFile> getProcessedLines() throws IOException {
-        // создаем список партий из файла
         List<PartyFromFile> partiesFromFile = new ArrayList<>();
         String sep = ",";
 
